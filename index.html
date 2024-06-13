@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percabangan Javascript</title>
+</head>
+<body>
+    <!-- Javascript alert & dialog box -->
+    <div id="konten"></div>
+    <script type="text/javascript">
+        var tamu = prompt("Nama Anda:", "Masukkan Nama Anda")
+        document.write("Selamat Datang, " + tamu + "<br>")
+        var usia = prompt("Masukkan Usia anda", "");
+        var konten = document.getElementById('konten');
+        var keterangan = '';
+
+        // Menentukan keterangan berdasarkan rentang usia
+        if (usia > 65) {
+            keterangan = "Manula";
+        } else if (usia > 50) {
+            keterangan = "Orang Tua";
+        } else if (usia > 20) {
+            keterangan = "Dewasa";
+        } else if (usia > 12) {
+            keterangan = "Remaja";
+        } else if (usia > 5) {
+            keterangan = "Anak-anak";
+        } else if (usia > 0) {
+            keterangan = "Balita";
+        } else {
+            keterangan = "Usia tidak valid";
+        }
+
+        // Menambahkan pesan berdasarkan usia
+        if (usia >= 17 && usia <= 65) {
+            konten.innerHTML = "Usia Anda " + usia + " diperbolehkan memiliki KTP<br>";
+            konten.innerHTML += "Usia Anda tergolong " + keterangan + "<br>";
+            window.alert("Usia Anda " + usia + " diperbolehkan memiliki KTP");
+        } else if (usia > 0 && usia < 17) {
+            konten.innerHTML = "Usia Anda " + usia + " belum diperbolehkan memiliki KTP<br>";
+            konten.innerHTML += "Anda masih tergolong " + keterangan + "<br>";
+            window.alert("Usia Anda " + usia + " belum diperbolehkan memiliki KTP");
+        } else if (usia > 65) {
+            konten.innerHTML = "Usia Anda " + usia + " diperbolehkan memiliki KTP<br>";
+            konten.innerHTML += "Usia Anda tergolong " + keterangan + "<br>";
+            window.alert("Usia Anda " + usia + " diperbolehkan memiliki KTP");
+        } else {
+            konten.innerHTML = "Usia tidak valid<br>";
+            window.alert("Usia tidak valid");
+        }
+    </script>
+</body>
+</html>
